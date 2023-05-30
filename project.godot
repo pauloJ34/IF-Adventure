@@ -8,10 +8,24 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "dialog_metadata",
+"language": "GDScript",
+"path": "res://script/Dialog/dialog_metadata.gd"
+} ]
+_global_script_class_icons={
+"dialog_metadata": ""
+}
+
 [application]
 
 config/name="Modelo-inicial"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://scenes/map_config/config_position/global.tscn"
 
 [display]
 

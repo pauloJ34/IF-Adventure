@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/palette/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/human/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/object_map/mesa.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/object_map/cadeira_estudante.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/map_config/portal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://script/room.gd" type="Script" id=6]
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( -4, -16 )
+b = Vector2( -4, 16 )
+
+[sub_resource type="SegmentShape2D" id=3]
+a = Vector2( 4, -16 )
+b = Vector2( 4, 16 )
+
+[sub_resource type="SegmentShape2D" id=4]
+a = Vector2( -16, -4 )
+b = Vector2( 16, -4 )
+
+[node name="room" type="Node2D"]
+position = Vector2( 35, -31 )
+script = ExtResource( 6 )
+
+[node name="map" type="Node2D" parent="."]
+
+[node name="parede_piso" parent="map" instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 0, 4, 0, 1, 536870912, 0, 2, 536870912, 0, 3, 536870912, 0, 4, 536870912, 0, 5, 536870912, 0, 6, 536870912, 0, 7, 536870912, 0, 8, 536870912, 0, 9, 536870912, 0, 10, 536870912, 0, 11, 536870916, 0, 65536, 3, 0, 65537, 536870922, 0, 65538, 536870922, 0, 65539, 536870922, 0, 65540, 536870922, 0, 65541, 536870922, 0, 65542, 536870922, 0, 65543, 536870922, 0, 65544, 536870922, 0, 65545, 536870922, 0, 65546, 536870922, 0, 65547, 536870915, 0, 131072, 3, 0, 131073, 536870922, 0, 131074, 536870922, 0, 131075, 536870922, 0, 131076, 536870922, 0, 131077, 536870922, 0, 131078, 536870922, 0, 131079, 536870922, 0, 131080, 536870922, 0, 131081, 536870922, 0, 131082, 536870922, 0, 131083, 536870915, 0, 196608, 3, 0, 196609, 536870922, 0, 196610, 536870922, 0, 196611, 536870922, 0, 196612, 536870922, 0, 196613, 536870922, 0, 196614, 536870922, 0, 196615, 536870922, 0, 196616, 536870922, 0, 196617, 536870922, 0, 196618, 536870922, 0, 196619, 536870915, 0, 262144, 3, 0, 262145, 536870922, 0, 262146, 536870922, 0, 262147, 536870922, 0, 262148, 536870922, 0, 262149, 536870922, 0, 262150, 536870922, 0, 262151, 536870922, 0, 262152, 536870922, 0, 262153, 536870922, 0, 262154, 536870922, 0, 262155, 536870915, 0, 327680, 3, 0, 327681, 536870922, 0, 327682, 10, 0, 327683, 536870922, 0, 327684, 536870922, 0, 327685, 536870922, 0, 327686, 536870922, 0, 327687, 536870922, 0, 327688, 536870922, 0, 327689, 536870922, 0, 327690, 536870922, 0, 327691, 536870915, 0, 393216, 3, 0, 393217, 10, 0, 393218, 10, 0, 393219, 536870922, 0, 393220, 536870922, 0, 393221, 536870922, 0, 393222, 536870922, 0, 393223, 536870922, 0, 393224, 536870922, 0, 393225, 536870922, 0, 393226, 536870922, 0, 393227, 536870915, 0, 458752, 3, 0, 458753, 10, 0, 458754, 10, 0, 458755, 10, 0, 458756, 536870922, 0, 458757, 536870922, 0, 458758, 536870922, 0, 458759, 536870922, 0, 458760, 536870922, 0, 458761, 536870922, 0, 458762, 536870922, 0, 458763, 536870915, 0, 524288, 536870920, 0, 524289, 536870919, 0, 524290, 536870919, 0, 524291, 536870919, 0, 524292, 536870919, 0, 524293, 536870919, 0, 524294, 536870919, 0, 524295, 536870919, 0, 524296, 536870919, 0, 524297, 536870922, 0, 524298, 536870919, 0, 524299, 8, 0 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 303, 195 )
+
+[node name="cadeira_A-12" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 115, 213 )
+
+[node name="cadeira_A-11" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 50, 213 )
+
+[node name="cadeira_A-10" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 50, 149 )
+
+[node name="cadeira_A-9" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 178, 213 )
+
+[node name="cadeira_A-8" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 178, 149 )
+
+[node name="cadeira_A-7" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 114, 85 )
+
+[node name="cadeira_A-6" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 114, 149 )
+
+[node name="cadeira_A-5" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 178, 85 )
+
+[node name="cadeira_A-4" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 242, 213 )
+
+[node name="cadeira_A-3" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 242, 149 )
+
+[node name="cadeira_A-2" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 242, 85 )
+
+[node name="cadeira_A-1" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 50, 85 )
+
+[node name="mesa" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 304, 127 )
+
+[node name="hall" parent="." instance=ExtResource( 5 )]
+position = Vector2( 304, 272 )
+
+[node name="hall_pos" type="Position2D" parent="."]
+position = Vector2( 304, 257 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 324, 272 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 284, 272 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 304, 285 )
+shape = SubResource( 4 )
