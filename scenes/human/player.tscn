@@ -86,7 +86,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=7]
 resource_name = "walk-bottom"
-length = 1.0
 loop = true
 step = 0.166667
 tracks/0/type = "value"
