@@ -20,18 +20,17 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Modelo-inicial"
+config/name="Núcleo raiz"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://scenes/map_config/config_position/global.tscn"
+Global="*res://conteudo/map_config/config_position/global.tscn"
 
 [display]
 
 window/size/width=480
 window/size/height=240
-window/size/fullscreen=true
 window/stretch/mode="2d"
 
 [gui]
@@ -68,6 +67,13 @@ ui_down={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="npc"
+2d_physics/layer_3="items"
+2d_physics/layer_4="worlds"
 
 [physics]
 

@@ -16,4 +16,3 @@ func show_message():
 		return
 	var _msg: String = msg_queue.pop_front()
 	text.text = _msg
-	print(msg_queue)

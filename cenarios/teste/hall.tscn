@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://conteudo/personagem/player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://conteudo/personagem/npc/servidor_A.tscn" type="PackedScene" id=2]
+[ext_resource path="res://conteudo/objeto_mapa/cadeira_vermelha.tscn" type="PackedScene" id=3]
+[ext_resource path="res://script/mapa/sala.gd" type="Script" id=4]
+[ext_resource path="res://conteudo/map_config/portal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://conteudo/paleta/TileMap.tscn" type="PackedScene" id=6]
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( 25, 20 )
+b = Vector2( -7, 20 )
+
+[node name="hall" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="object" type="Node2D" parent="."]
+
+[node name="floor" parent="object" instance=ExtResource( 6 )]
+tile_data = PoolIntArray( 0, 536870912, 0, 1, 536870912, 0, 2, 536870912, 0, 3, 536870912, 0, 4, 536870912, 0, 5, 536870912, 0, 6, 536870912, 0, 7, 536870922, 0, 8, 536870912, 0, 9, 536870912, 0, 10, 536870912, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 65536, 536870922, 0, 65537, 536870922, 0, 65538, 536870922, 0, 65539, 536870922, 0, 65540, 536870922, 0, 65541, 536870922, 0, 65542, 536870922, 0, 65543, 536870922, 0, 65544, 536870922, 0, 65545, 536870922, 0, 65546, 536870922, 0, 65547, 10, 0, 65548, 10, 0, 65549, 10, 0, 65550, 10, 0, 65551, 10, 0, 65552, 10, 0, 65553, 10, 0, 65554, 10, 0, 65555, 10, 0, 131072, 536870922, 0, 131073, 536870922, 0, 131074, 536870922, 0, 131075, 536870922, 0, 131076, 536870922, 0, 131077, 536870922, 0, 131078, 536870922, 0, 131079, 536870922, 0, 131080, 536870922, 0, 131081, 536870922, 0, 131082, 536870922, 0, 131083, 10, 0, 131084, 10, 0, 131085, 10, 0, 131086, 10, 0, 131087, 10, 0, 131088, 10, 0, 131089, 10, 0, 131090, 10, 0, 131091, 10, 0, 196608, 536870922, 0, 196609, 536870922, 0, 196610, 536870922, 0, 196611, 536870922, 0, 196612, 536870922, 0, 196613, 536870922, 0, 196614, 536870922, 0, 196615, 536870922, 0, 196616, 536870922, 0, 196617, 536870922, 0, 196618, 536870922, 0, 196619, 10, 0, 196620, 10, 0, 196621, 10, 0, 196622, 10, 0, 196623, 10, 0, 196624, 10, 0, 196625, 10, 0, 196626, 10, 0, 196627, 10, 0, 262144, 536870924, 0, 262145, 536870924, 0, 262146, 536870924, 0, 262147, 536870924, 0, 262148, 536870924, 0, 262149, 536870924, 0, 262150, 536870924, 0, 262151, 536870924, 0, 262152, 536870924, 0, 262153, 536870924, 0, 262154, 12, 0, 262155, 12, 0, 262156, 12, 0, 262157, 12, 0, 262158, 12, 0, 262159, 12, 0, 262160, 12, 0, 262161, 12, 0, 262162, 12, 0, 262163, 12, 0, 327680, 536870923, 0, 327681, 536870923, 0, 327682, 536870923, 0, 327683, 536870923, 0, 327684, 536870923, 0, 327685, 536870923, 0, 327686, 536870923, 0, 327687, 536870923, 0, 327688, 536870923, 0, 327689, 536870923, 0, 327690, 536870923, 0, 327691, 11, 0, 327692, 11, 0, 327693, 11, 0, 327694, 11, 0, 327695, 11, 0, 327696, 11, 0, 327697, 11, 0, 327698, 11, 0, 327699, 11, 0 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 240, 53 )
+speed = 100
+
+[node name="servidor_A" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 368, 27 )
+
+[node name="Cadeira_V-2" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 145, 35 )
+
+[node name="Cadeira_V-1" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 111, 35 )
+
+[node name="Cadeira_V-3" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 81, 35 )
+
+[node name="Cadeira_V-4" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 47, 35 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 231, -7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="room" parent="." instance=ExtResource( 5 )]
+position = Vector2( 240, 16 )
+
+[node name="room_pos" type="Position2D" parent="."]
+position = Vector2( 240, 32 )
