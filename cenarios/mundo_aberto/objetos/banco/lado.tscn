@@ -3,14 +3,15 @@
 [ext_resource path="res://tilesets/objetos/banco_lateral.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11.5, 24.5 )
+extents = Vector2( 11.75, 24 )
 
 [node name="Sprite" type="Sprite"]
 texture = ExtResource( 1 )
-offset = Vector2( 1, -14 )
+offset = Vector2( 1, -30 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( -1, -11 )
+position = Vector2( 0, -18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -0.25, -6 )
 shape = SubResource( 1 )

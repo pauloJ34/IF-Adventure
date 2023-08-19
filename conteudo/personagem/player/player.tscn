@@ -165,7 +165,10 @@ script = ExtResource( 2 )
 speed = 200
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -3 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
+offset = Vector2( 0, -14 )
 hframes = 9
 vframes = 4
 region_rect = Rect2( 173.478, 43.2564, 3.32867, 5.2704 )
@@ -182,9 +185,9 @@ anims/walk-right = SubResource( 9 )
 anims/walk-top = SubResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 14 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, 14 )
 current = true
 limit_smoothed = true

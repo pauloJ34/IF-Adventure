@@ -2,25 +2,25 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Atlas2.png-efa208051d8b7e58b71c713dac7d8bec.stex"
+path="res://.import/logo-css.jpg-5fd504c5a6c3430d51dcb2bfa799a138.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/mapa/atlas/Atlas2.png"
-dest_files=[ "res://.import/Atlas2.png-efa208051d8b7e58b71c713dac7d8bec.stex" ]
+source_file="res://tilesets/temp/logo-css.jpg"
+dest_files=[ "res://.import/logo-css.jpg-5fd504c5a6c3430d51dcb2bfa799a138.stex" ]
 
 [params]
 
 compress/mode=0
-compress/lossy_quality=1.0
+compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=1
+compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
