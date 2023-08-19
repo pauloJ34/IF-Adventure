@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/logo-css.jpg-5fd504c5a6c3430d51dcb2bfa799a138.stex"
+path="res://.import/cart2.0.png-0946f345183ecc64c5610320f9e399c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/temp/logo-css.jpg"
-dest_files=[ "res://.import/logo-css.jpg-5fd504c5a6c3430d51dcb2bfa799a138.stex" ]
+source_file="res://tilesets/temp/cart2.0.png"
+dest_files=[ "res://.import/cart2.0.png-0946f345183ecc64c5610320f9e399c0.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
