@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 var aceleracao = Vector2 (35,0)
-var desaceleracao = Vector2 (-25.0,0)
+var desaceleracao = -25
 var velocidade = Vector2.ZERO
 var velocidadeMaxima = 125
 var friccao = 0.5
@@ -31,12 +31,13 @@ func direcao():
 	if !velocidade:
 		pass
 	else: 
-		if Input.is_action_just_released("virarDireita"):
+		if Input.is_action_just_pressed("virarDireita"):
 			velocidade = velocidade.rotated(rotacao)
 			aceleracao = aceleracao.rotated(rotacao)
 			desaceleracao = desaceleracao.rotated(rotacao)
 			rotation += rotacao
-		if Input.is_action_just_released("virarEsquerda"):
+			print(rotation)
+		if Input.is_action_just_pressed("virarEsquerda"):
 			velocidade = velocidade.rotated(-rotacao)
 			aceleracao = aceleracao.rotated(-rotacao)
 			desaceleracao = desaceleracao.rotated(-rotacao)
@@ -45,7 +46,7 @@ func direcao():
 # A FUNÇÃO freiar() É A RESPONSAVEL POR FREIAR O CART
 # TODA VEZ QUR Shift É PRECIONADO O CART PERDE BASTANTE DE SUA VELOCIDADE
 func freiar():
-	if Input.is_action_just_released("freiar"):
+	if Input.is_action_pressed("freiar"):
 		if !velocidade:
 			pass
 		else:
@@ -54,15 +55,15 @@ func freiar():
 # A FUNÇÃO acelerar() É A RESPONSAVEL POR FAZER O CART IR PARA FRENTE
 # TODA VEZ QUE w É PRECIONADO O CART RECEBE UMA ACELERAÇAO POSITIVA, OU SEJA, VAI PARA FRENTE
 func acelerar():
-	if Input.is_action_just_released("acelerar"):
+	if Input.is_action_pressed("acelerar"):
 		velocidade += aceleracao
 		velocidade = velocidade.limit_length(velocidadeMaxima)
 
 # A FUNÇÃO darRe() É A RESPONSAVEL POR FAZER O CART IR PARA TRAZ
 # TODA VEZ QUE s É PRECIONADO O CART RECEBE UMA ACELERAÇÃO NEGATIVA, OU SEJA, VAI PARA TRAZ
 func darRe():
-	if Input.is_action_just_released("ré"):
-		velocidade += desaceleracao
+	if Input.is_action_pressed("ré"):
+		velocidade.x += desaceleracao
 		velocidade = velocidade.limit_length(velocidadeMaxima)
 
 # A FUNÇÃO friccao() É A RESPONSAVEL POR RETIRAR E DIFICULTAR A VELOCIDADE DO CART
