@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://cenarios/mundo_aberto/interface/barra_acerto.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color( 1, 1, 1, 0.8 )
+anti_aliasing = false
+
+[sub_resource type="Gradient" id=2]
+interpolation_mode = 1
+offsets = PoolRealArray( 0, 0.45, 0.55 )
+colors = PoolColorArray( 1, 0, 0, 0.5, 0, 1, 0, 0.5, 1, 0, 0, 0.5 )
+
+[sub_resource type="GradientTexture2D" id=3]
+resource_local_to_scene = true
+flags = 3
+gradient = SubResource( 2 )
+width = 2048
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = SubResource( 3 )
+region_rect = Rect2( 0, 0, 2048, 64 )
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HScrollBar" type="HScrollBar" parent="."]
+margin_left = -188.0
+margin_top = -175.0
+margin_right = 192.0
+margin_bottom = -111.0
+mouse_filter = 2
+size_flags_vertical = 1
+custom_styles/grabber = SubResource( 1 )
+custom_styles/scroll = SubResource( 4 )
+page = 5.0
+script = ExtResource( 1 )

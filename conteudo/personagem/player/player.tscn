@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://tilesets/pesornagem/player/mc_animation.png" type="Texture" id=1]
+[ext_resource path="res://assets/pesornagem/player/mc_animation.png" type="Texture" id=1]
 [ext_resource path="res://script/personagem_principal/mapa_aberto/player.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=2]
@@ -32,7 +32,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ 0 ]
 }
 
@@ -48,8 +48,8 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 27 ]
+"update": 0,
+"values": [ 30 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -64,8 +64,8 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 18 ]
+"update": 0,
+"values": [ 20 ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -80,13 +80,49 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "pescando_espera_bottom"
+length = 2.0
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 9 ]
+"values": [ 50, 51, 52, 53, 54 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "pescando_fisgado_bottom"
+length = 1.25
+loop = true
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 55, 56, 57, 58, 59 ]
 }
 
 [sub_resource type="Animation" id=7]
 resource_name = "walk-bottom"
-length = 1.06667
+length = 0.933334
 loop = true
 step = 0.0666667
 tracks/0/type = "value"
@@ -98,13 +134,13 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.133333, 0.266667, 0.4, 0.533333, 0.666667, 0.8, 0.933333 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ 1, 2, 3, 4, 5, 6, 7, 8 ]
 }
 
 [sub_resource type="Animation" id=8]
 resource_name = "walk-left"
-length = 1.06667
+length = 0.933334
 loop = true
 step = 0.0666667
 tracks/0/type = "value"
@@ -116,13 +152,13 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.133333, 0.266667, 0.4, 0.533333, 0.666667, 0.8, 0.933333 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 28, 29, 30, 31, 32, 33, 34, 35 ]
+"update": 0,
+"values": [ 31, 32, 33, 34, 35, 36, 37, 38 ]
 }
 
 [sub_resource type="Animation" id=9]
 resource_name = "walk-right"
-length = 1.06667
+length = 0.933334
 loop = true
 step = 0.0666667
 tracks/0/type = "value"
@@ -134,13 +170,13 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.133333, 0.266667, 0.4, 0.533333, 0.666667, 0.8, 0.933333 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 19, 20, 21, 22, 23, 24, 25, 26 ]
+"update": 0,
+"values": [ 21, 22, 23, 24, 25, 26, 27, 28 ]
 }
 
 [sub_resource type="Animation" id=10]
 resource_name = "walk-top"
-length = 1.06667
+length = 0.933334
 loop = true
 step = 0.0666667
 tracks/0/type = "value"
@@ -152,12 +188,13 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.133333, 0.266667, 0.4, 0.533333, 0.666667, 0.8, 0.933333 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 10, 11, 12, 13, 14, 15, 16, 17 ]
+"update": 0,
+"values": [ 11, 12, 13, 14, 15, 16, 17, 18 ]
 }
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.5, 3.5 )
+[sub_resource type="CapsuleShape2D" id=13]
+radius = 3.0
+height = 14.0
 
 [node name="player" type="KinematicBody2D" groups=["player"]]
 collision_mask = 0
@@ -165,13 +202,11 @@ script = ExtResource( 2 )
 speed = 200
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -3 )
+position = Vector2( 0, -25 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
-offset = Vector2( 0, -14 )
-hframes = 9
-vframes = 4
-region_rect = Rect2( 173.478, 43.2564, 3.32867, 5.2704 )
+hframes = 10
+vframes = 8
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
@@ -179,15 +214,17 @@ anims/idle-bottom = SubResource( 3 )
 anims/idle-left = SubResource( 4 )
 anims/idle-right = SubResource( 5 )
 anims/idle-top = SubResource( 6 )
+anims/pescando_espera_bottom = SubResource( 11 )
+anims/pescando_fisgado_bottom = SubResource( 12 )
 anims/walk-bottom = SubResource( 7 )
 anims/walk-left = SubResource( 8 )
 anims/walk-right = SubResource( 9 )
 anims/walk-top = SubResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+rotation = 1.5708
+shape = SubResource( 13 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, 14 )
 current = true
 limit_smoothed = true

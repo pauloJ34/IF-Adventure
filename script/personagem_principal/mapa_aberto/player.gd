@@ -8,9 +8,10 @@ export(int) var speed
 
 func _physics_process(_delta: float) -> void:
 	move()
+	#print((Input.is_action_pressed("ui_up") || Input.is_action_pressed("ui_down")) and !Global.in_minigame)
 
 func move() -> void:
-	if Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right"):
+	if (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")) and !Global.in_minigame:
 		motion.x = (
 			Input.get_action_strength("ui_right")-
 			Input.get_action_strength("ui_left")) * speed
@@ -32,9 +33,9 @@ func move() -> void:
 				animation.play("idle-right")
 				Global.last_player_stand = 0
 		
-	elif Input.is_action_pressed("ui_up") || Input.is_action_pressed("ui_down"):
+	elif (Input.is_action_pressed("ui_up") || Input.is_action_pressed("ui_down")) and !Global.in_minigame:
 		motion.x = 0
-		motion.y = (
+		motion.y = ( 
 			Input.get_action_strength("ui_down")-
 			Input.get_action_strength("ui_up")) * speed
 		motion = move_and_slide(motion)
@@ -67,6 +68,10 @@ func move() -> void:
 			animation.play("idle-bottom")
 		elif Global.last_player_stand == 3:
 			animation.play("idle-top")
+		elif Global.last_player_stand == 4:
+			animation.play("pescando_espera_bottom")
+		elif Global.last_player_stand == 5:
+			animation.play("pescando_fisgado_bottom")
 	
 	
 	

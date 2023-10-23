@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://cenarios/mundo_aberto/paleta/paleta.tscn" type="PackedScene" id=1]
+[ext_resource path="res://cenarios/mundo_aberto/objetos/escaria.gd" type="Script" id=3]
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( -127, -1 )
+b = Vector2( 129, -63 )
+
+[node name="area2d" type="Area2D"]
+z_index = 10
+collision_layer = 8
+collision_mask = 3
+script = ExtResource( 3 )
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( -2, 102, 0, 196609, 125, 1, 262145, 125, 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2( 0, 64 )
+z_index = 10
+polygon = PoolVector2Array( -128, -57, 128, -121, 128, 54, -128, 117 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( 0, 64 )
+collision_layer = 8
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, -64 )
+shape = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -128, 63, -128, 48, 65, -1, 128, -1 )
+
+[connection signal="body_entered" from="." to="." method="_on_area2d_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_area2d_body_exited"]
